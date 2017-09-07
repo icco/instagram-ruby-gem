@@ -70,7 +70,7 @@ module Instagram
     def generate_sig(endpoint, params, secret)
       sig = endpoint
       params.sort.map do |key, val|
-        sig += "|%s=%s" % [key, val]
+        sig += format("|%s=%s", key, val)
       end
       digest = OpenSSL::Digest.new("sha256")
       OpenSSL::HMAC.hexdigest(digest, secret, sig)

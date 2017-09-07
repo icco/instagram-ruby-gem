@@ -197,7 +197,7 @@ module Instagram
         yield(self)
       end
 
-      [:user, :tag, :location, :geography].each do |object|
+      %i[user tag location geography].each do |object|
         class_eval <<-RUBY_EVAL, __FILE__, __LINE__ + 1
           def on_#{object}_changed(&block)
             for change in @changes['#{object}']

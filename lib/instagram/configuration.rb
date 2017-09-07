@@ -5,22 +5,22 @@ module Instagram
   # Defines constants and methods related to configuration
   module Configuration
     # An array of valid keys in the options hash when configuring a {Instagram::API}
-    VALID_OPTIONS_KEYS = [
-      :access_token,
-      :adapter,
-      :client_id,
-      :client_secret,
-      :client_ips,
-      :connection_options,
-      :scope,
-      :redirect_uri,
-      :endpoint,
-      :format,
-      :proxy,
-      :user_agent,
-      :no_response_wrapper,
-      :loud_logger,
-      :sign_requests,
+    VALID_OPTIONS_KEYS = %i[
+      access_token
+      adapter
+      client_id
+      client_secret
+      client_ips
+      connection_options
+      scope
+      redirect_uri
+      endpoint
+      format
+      proxy
+      user_agent
+      no_response_wrapper
+      loud_logger
+      sign_requests
     ].freeze
 
     # By default, don't set a user access token
