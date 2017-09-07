@@ -1,21 +1,16 @@
-begin
-  require "simplecov"
-rescue LoadError
-  # ignore
-else
-  SimpleCov.start do
-    add_group "Instagram", "lib/instagram"
-    add_group "Faraday Middleware", "lib/faraday"
-    add_group "Specs", "spec"
-  end
-end
-
+require "simplecov"
 require File.expand_path("../../lib/instagram", __FILE__)
-
 require "rspec"
 require "webmock/rspec"
+
 RSpec.configure do |config|
   config.include WebMock::API
+end
+
+SimpleCov.start do
+  add_group "Instagram", "lib/instagram"
+  add_group "Faraday Middleware", "lib/faraday"
+  add_group "Specs", "spec"
 end
 
 def capture_output

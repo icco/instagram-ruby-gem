@@ -10,7 +10,7 @@ module Instagram
              end
       data.extend(self)
       data.instance_exec do
-        %w(pagination meta).each do |k|
+        %w[pagination meta].each do |k|
           response_hash.public_send(k).tap do |v|
             instance_variable_set("@#{k}", v) if v
           end
