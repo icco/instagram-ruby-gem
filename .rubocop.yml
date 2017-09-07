@@ -3,8 +3,13 @@ Style/StringLiterals:
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
 Metrics/LineLength:
-  Max: 120
+  Enabled: false
 Metrics/BlockLength:
-  Max: 100
+  Enabled: false
 Style/TrailingCommaInLiteral:
   EnforcedStyleForMultiline: comma
+AllCops:
+  Exclude:
+    - "vendor/**/*"
+  UseCache: false
+  TargetRubyVersion: 2.1
