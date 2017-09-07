@@ -1,8 +1,18 @@
 language: ruby
-rvm:
-- 2.2
-- 2.3
-- 2.4
+matrix:
+  fast_finish: true
+  include:
+    - rvm: 2.1
+    - rvm: 2.2
+    - rvm: 2.3
+    - rvm: 2.4
+    - rvm: ruby-head
+    - rvm: jruby-head
+  allow_failures:
+    - rvm: jruby-head
+    - rvm: ruby-head
+    - rvm: 2.0
+    - rvm: 2.1
 install:
 - bundle install --jobs=3 --retry=3
 script:
