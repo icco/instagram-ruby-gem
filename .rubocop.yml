@@ -12,4 +12,4 @@ AllCops:
   Exclude:
     - "vendor/**/*"
   UseCache: false
-  TargetRubyVersion: 2.1
+  TargetRubyVersion: 2.2
