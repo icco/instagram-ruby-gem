@@ -168,7 +168,7 @@ describe Instagram::Client do
           context ".pagination" do
             subject { user_media_feed_response.pagination }
 
-            it { is_expected.to be_an_instance_of(Hashie::Mash) }
+            it { is_expected.to be_an_instance_of(Instagram::HashieWrapper) }
 
             describe "#next_max_id" do
               subject { super().next_max_id }
@@ -179,7 +179,7 @@ describe Instagram::Client do
           context ".meta" do
             subject { user_media_feed_response.meta }
 
-            it { is_expected.to be_an_instance_of(Hashie::Mash) }
+            it { is_expected.to be_an_instance_of(Instagram::HashieWrapper) }
 
             describe "#code" do
               subject { super().code }
