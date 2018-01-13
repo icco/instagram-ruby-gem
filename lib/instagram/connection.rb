@@ -13,6 +13,8 @@ module Instagram
         url: endpoint,
       }.merge(connection_options)
 
+      FaradayMiddleware::Mashify.mash_class = HashieWrapper
+
       Faraday::Connection.new(options) do |connection|
         connection.use FaradayMiddleware::InstagramOAuth2, client_id, access_token
         connection.use Faraday::Request::UrlEncoded
