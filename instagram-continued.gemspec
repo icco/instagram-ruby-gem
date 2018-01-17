@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency("faraday", "~> 0.11")
   s.add_runtime_dependency("faraday_middleware")
   s.add_runtime_dependency("multi_json")
-  s.add_runtime_dependency("hashie", ">= 3.5.1")
 
   s.authors = ["Shayne Sweeney", "Nat Welch"]
   s.description = "A Ruby wrapper for the Instagram REST and Search APIs"

@@ -15,7 +15,7 @@ module Instagram
             instance_variable_set("@#{k}", v) if v
           end
         end
-        @ratelimit = HashieWrapper.new(ratelimit_hash)
+        @ratelimit = ratelimit_hash
       end
       data
     end
