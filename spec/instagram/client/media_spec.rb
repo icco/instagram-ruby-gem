@@ -27,26 +27,6 @@ describe Instagram::Client do
         end
       end
 
-      describe ".media_shortcode" do
-        before do
-          stub_get("media/shortcode/BG9It")
-            .with(query: { access_token: @client.access_token })
-            .to_return(body: fixture("media_shortcode.#{format}"), headers: { content_type: "application/#{format}; charset=utf-8" })
-        end
-
-        it "should get the correct resource" do
-          @client.media_shortcode("BG9It")
-          expect(a_get("media/shortcode/BG9It")
-            .with(query: { access_token: @client.access_token }))
-            .to have_been_made
-        end
-
-        it "should return extended information of a given media item" do
-          media = @client.media_shortcode("BG9It")
-          expect(media.user.username).to eq("mikeyk")
-        end
-      end
-
       describe ".media_popular" do
         before do
           stub_get("media/popular.#{format}")
